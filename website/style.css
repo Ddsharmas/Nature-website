@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+#currentTitle {
+    top: 105px;
+    position: fixed;
+}
+
+header h1,
+header h2,
+header .header-title {
+    grid-column: 2;
+    text-align: center;
+    height: 40px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    top: 40px;
+    height: 60px;
+    position: fixed;
+    z-index: 1000;
+    justify-content: space-between;
+    width: 100%;
+    background: black;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-items {
+    display: flex;
+    width: 100%;
+    background-color: black;
+}
+
+.nav-items li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-items li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-items li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.hidden-uploader {
+    display: none;
+}
+
+.nav-upload-btn {
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 16px;
+}
+
+.nav-upload-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.dashboard-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    max-height: 60px;
+    overflow: hidden;
+}
+
+.hidden-uploader {
+    display: none !important;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+
+.dashboard-card .profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.page-content-wrapper {
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    width: 100%;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.container {
+    color: black;
+    display: block;
+    position: relative;
+    top: 120px;
+    max-width: 600px;
+    background-color: bisque;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.profile_picture {
+    width: 100px;
+    height: 100px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.section-divider {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.user-uploaded-grid,
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.uploaded-card {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.uploaded-card p {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #333;
+}
+
+.nature-grid {
+    margin-top: 2rem;
+}
+
+.file-input-hidden {
+    display: none;
+}
+
+.upload-label-btn {
+    display: inline-block;
+    background-color: lightblue;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.upload-label-btn:hover {
+    background-color: blue;
+}
+
+#signOutBtn {
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#signOutBtn:hover {
+    background-color: darkred;
+}
+
+footer {
+    clear: both;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+/* Mobile layout adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 75%;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 15px;
+        width: 50%;
+    }
+
+    img {
+        width: 50%;
+    }
+
+    .uploaded-card {
+        width: calc(75% - 15px);
+    }
+
+    .image-container {
+        width: calc(75% - 15px);
+    }
+
+    header {
+        background-color: black;
+        color: white;
+        padding: 0;
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-columns: 40px 1fr 40px;
+        align-items: center;
+        padding: 0 15px;
+        top: 30px;
+        height: 40px;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        background: black;
+    }
+
+    body.nav-menu-open .page-content-wrapper {
+        transform: translateX(50px);
+        width: 100%;
+    }
+
+     body.nav-menu-open .container {
+        width: 70%;
+    }
+
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        grid-column: 1;
+        justify-self: start;
+        z-index: 1000;
+    }
+
+    .navbar>.dashboard-card {
+        display: none;
+    }
+
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 110px;
+        height: calc(100vh - 40px);
+        background-color: black;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+        transform: translateX(-170px);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-items.active,
+    body.nav-menu-open .nav-items {
+        transform: translateX(0);
+    }
+
+    .nav-items li {
+        width: 100%;
+    }
+
+    .nav-items li a {
+        padding: 12px 15px;
+        width: 100%;
+        font-size: 15px;
+        white-space: normal;
+    }
+
+    .nav-items li:last-child {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-left: 0 !important;
+        padding: 15px !important;
+    }
+
+    .nav-items .dashboard-card {
+        display: flex !important;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .nav-items .dropdown-menu {
+        display: none;
+        /* Keeps it completely hidden initially */
+        position :fixed;
+        top: 200px;
+        left: 0;
+        background-color: white;
+        min-width: 30px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        padding: 0;
+        margin: 8px 0 0 0;
+        list-style: none;
+        margin-left: auto;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+
+    /* Individual list item styling */
+    .dropdown-menu li a,
+    .dropdown-menu li button {
+        width: 50%;
+        padding: 5px 6px;
+        text-decoration: none;
+        display: block;
+        color: #333;
+        font-size: 7px;
+        text-align: left;
+        border: none;
+        background: transparent;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    /* Hover effects for individual items */
+    .dropdown-menu li a:hover,
+    .dropdown-menu li button:hover {
+        background-color: #f1f1f1;
+    }
+}
+
+/* Tablet layout adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    img {
+        width: 75%;
+    }
+}
+
+/* Desktop layout adjustments */
+@media (min-width: 1025px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    img {
+        width: 100%;
+    }
+}

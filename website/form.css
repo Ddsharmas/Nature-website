@@ -1,0 +1,231 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color:#fff;
+ }
+
+ header {
+     background-color: black;
+     color: white;
+     padding: 1rem;
+     text-align: center;
+ }
+
+ nav {
+     background-color: black;
+     padding: 0.5rem;
+ }
+
+ .bt a{
+    color: black;
+    text-decoration: none;
+ }
+ nav a {
+     color: white;
+     text-decoration: none;
+     padding: 0.5rem 1rem;
+     display: inline-block;
+ }
+
+ nav a:hover {
+     background-color: black;
+ }
+
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: black;
+     padding: 0.75rem 1rem;
+ }
+
+ .navbar .brand {
+     color: #fff;
+     text-decoration: none;
+     font-size: 1.2rem;
+     font-weight: bold;
+ }
+
+ .nav-items {
+     display: flex;
+     gap: 1rem;
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+
+ .nav-items li a {
+     color: #fff;
+     text-decoration: none;
+     padding: 0.5rem;
+ }
+
+ .nav-toggle {
+     display: none;
+     background: none;
+     border: none;
+     color: #fff;
+     font-size: 1.5rem;
+     cursor: pointer;
+ }
+
+ /* Mobile devices */
+ @media (max-width: 768px) {
+     .container {
+         padding: 15px;
+     }
+
+     h1 {
+         font-size: 24px;
+     }
+
+     h2 {
+         font-size: 18px;
+     }
+
+     img {
+         width: 50%;
+     }
+ }
+
+ /* Tablets */
+ @media (min-width: 769px) and (max-width: 1024px) {
+     .container {
+         padding: 25px;
+     }
+
+     h1 {
+         font-size: 28px;
+     }
+
+     h2 {
+         font-size: 20px;
+     }
+
+     img {
+         width: 75%;
+     }
+ }
+
+ /* Desktop */
+ @media (min-width: 1025px) {
+     .container {
+         padding: 30px;
+     }
+
+     h1 {
+         font-size: 32px;
+     }
+
+     h2 {
+         font-size: 24px;
+     }
+
+     img {
+         width: 100%;
+     }
+ }
+
+ /* Navbar styles */
+ @media (max-width: 768px) {
+     .navbar {
+         flex-wrap: wrap;
+     }
+
+     .nav-toggle {
+         display: block;
+     }
+
+     .nav-items {
+         width: 100%;
+         flex-direction: column;
+         display: none;
+     }
+
+     .nav-items.show {
+         display: flex;
+     }
+
+     .nav-items li {
+         width: 100%;
+     }
+
+     .nav-items li a {
+         display: block;
+         padding: 0.75rem 0;
+         border-top: 1px solid rgba(255, 255, 255, 0.1);
+     }
+ }
+
+ main {
+     text-align: center;
+     padding: 2rem;
+     max-width: 800px;
+     margin: 0 auto;
+ }
+
+ footer {
+     background-color: black;
+     color: white;
+     text-align: center;
+     padding: 1rem;
+     margin-top: 2rem;
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+ }
+
+ .form {
+     margin-top: 5px;
+     margin-bottom: 5px;
+ }
+
+ .forme {
+     margin-top: 5px;
+     margin-bottom: 5px;
+ }
+
+ .formp {
+     margin-top: 5px;
+     margin-bottom: 5px;
+ }
+
+ .container {
+     color: black;
+     max-height: 500px;
+     max-width: 750px;
+     margin: 0 auto;
+     background-color:bisque;
+     padding: 1px;
+     border-radius: 10px;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+ }
+
+ section {
+     text-align: center;
+ }
+
+ button {
+     background-color: blue;
+     padding: 5px;
+     font-size: 16px;
+     font-weight: 600;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease;
+     text-decoration: none;
+ }
+
+ p {
+     padding: 10px;
+ }
